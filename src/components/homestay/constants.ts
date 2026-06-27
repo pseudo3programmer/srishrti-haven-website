@@ -1,7 +1,7 @@
 export const WHATSAPP_URL = "https://wa.me/919637796690";
 export const INSTAGRAM_URL = "https://www.instagram.com/shreesrushti_homestay_matheran/";
 export const PHONE_DISPLAY = "+91 96377 96690";
-export const EMAIL = "hello@shreesrushti.in";
+export const EMAIL = "";
 
 export const MAP_QUERY = "Matheran,Maharashtra,India";
 export const MAP_EMBED_URL = `https://maps.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&z=14&output=embed`;

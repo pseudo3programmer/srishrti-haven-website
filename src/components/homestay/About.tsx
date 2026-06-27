@@ -24,7 +24,7 @@ export function About() {
 
           <div className="mt-8 grid grid-cols-3 gap-4">
             {[
-              { n: "3", l: "Cottages" },
+              { n: "2", l: "Cottages" },
               { n: "5★", l: "Hospitality" },
               { n: "1947", l: "Feet elevation" },
             ].map((s) => (
