@@ -51,9 +51,7 @@ export function Rooms() {
           {rooms.map((r, idx) => (
             <article
               key={r.name}
-              className={`group overflow-hidden rounded-2xl border bg-[#FBF4E4] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
-                idx === 2 ? "md:col-span-2" : ""
-              }`}
+              className="group overflow-hidden rounded-2xl border bg-[#FBF4E4] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               style={{ borderColor: "#6B7C3F33" }}
             >
               <div className="overflow-hidden">

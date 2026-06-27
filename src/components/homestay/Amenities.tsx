@@ -11,7 +11,7 @@ export function Amenities() {
         <h2 className="text-center font-serif text-2xl font-semibold sm:text-3xl" style={{ color: "#FBF8EF" }}>
           Amenities Available
         </h2>
-        <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-10 grid grid-cols-3 gap-6">
           {items.map((it) => (
             <div key={it.label} className="flex flex-col items-center text-center">
               <div
