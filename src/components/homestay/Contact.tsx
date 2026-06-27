@@ -31,7 +31,6 @@ export function Contact() {
             <p className="mt-3 text-sm leading-relaxed" style={{ color: "#3F3F2C" }}>
               Chat with the owner for availability, pricing, and special requests. We reply within minutes.
             </p>
-            {/* TODO: Replace WHATSAPP_URL placeholder with the cottage owner's real WhatsApp number. */}
             <a
               href={WHATSAPP_URL}
               target="_blank"
@@ -65,7 +64,6 @@ export function Contact() {
             <p className="mt-3 text-sm leading-relaxed" style={{ color: "#3F3F2C" }}>
               Real photos, real moments. See what guests are experiencing right now.
             </p>
-            {/* TODO: Replace INSTAGRAM_URL placeholder with the actual Instagram handle. */}
             <a
               href={INSTAGRAM_URL}
               target="_blank"

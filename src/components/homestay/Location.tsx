@@ -20,9 +20,6 @@ export function Location() {
           <h2 className="mt-3 font-serif text-3xl font-semibold sm:text-4xl">Tucked into Matheran's hills</h2>
         </div>
 
-        {/* TODO: Replace map embed query with the exact Google Maps pin URL provided by the cottage owner.
-            For a keyed iframe use:
-            https://www.google.com/maps/embed/v1/place?key=YOUR_KEY&q=Matheran,Maharashtra,India&zoom=14 */}
         <div
           className="mt-10 overflow-hidden rounded-xl border bg-[#FBF4E4] shadow-sm"
           style={{ borderColor: "#6B7C3F40" }}
