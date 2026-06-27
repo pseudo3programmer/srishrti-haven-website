@@ -82,7 +82,7 @@ export function Contact() {
         <div className="mt-10 flex flex-col items-center gap-1 text-center text-sm" style={{ color: "#6E6A55" }}>
           <div>📍 Shree Srushti Homestay, Matheran, Raigad District, Maharashtra 410102</div>
           <div>
-            ✉️{" "}
+            {"\n"}
             <a href={`mailto:${EMAIL}`} className="hover:underline" style={{ color: "#6B7C3F" }}>
               {EMAIL}
             </a>
