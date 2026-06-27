@@ -13,7 +13,7 @@ const rooms = [
     img: room2,
     name: "Classic Mountain View Room",
     desc: "Wake up to panoramic mountain vistas through large windows. Best for nature lovers.",
-    amenities: ["Sleeps 2", "Mountain view", "Large windows", "Hot water"],
+    amenities: ["Sleeps 2", "Mountain view", "Hot water"],
   },
 ];
 
