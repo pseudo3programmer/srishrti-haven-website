@@ -1,26 +1,19 @@
 import room1 from "@/assets/room1.jpg";
 import room2 from "@/assets/room2.jpg";
-import room3 from "@/assets/room3.jpg";
 import { WHATSAPP_URL } from "./constants";
 
 const rooms = [
   {
     img: room1,
-    name: "Deluxe Cottage",
-    desc: "King-size bed, private verandah and big forest-facing windows. Best for couples.",
-    amenities: ["Sleeps 2", "King bed", "Forest view", "Hot water"],
+    name: "Standard Room",
+    desc: "A clean, comfortable room with essential amenities for a restful stay.",
+    amenities: ["Sleeps 2", "Comfortable bed", "Clean linens", "Hot water"],
   },
   {
     img: room2,
-    name: "Family Suite",
-    desc: "Two queen beds under a vaulted wooden ceiling with panoramic hill views.",
-    amenities: ["Sleeps 4", "2 queen beds", "Hill view", "Hot water"],
-  },
-  {
-    img: room3,
-    name: "Garden Room",
-    desc: "Quiet ground-floor room opening onto our flower garden. Perfect for solo stays.",
-    amenities: ["Sleeps 2", "Garden patio", "Terracotta floors", "Hot water"],
+    name: "Classic Mountain View Room",
+    desc: "Wake up to panoramic mountain vistas through large windows. Best for nature lovers.",
+    amenities: ["Sleeps 2", "Mountain view", "Large windows", "Hot water"],
   },
 ];
 
@@ -50,7 +43,7 @@ export function Rooms() {
           </div>
           <h2 className="mt-3 font-serif text-3xl font-semibold sm:text-4xl">Rooms & Cottages</h2>
           <p className="mx-auto mt-3 max-w-xl text-sm" style={{ color: "#6E6A55" }}>
-            Three quiet spaces. Choose whichever suits your trip — every stay includes home-cooked meals.
+            Two quiet spaces. Choose whichever suits your trip — every stay includes home-cooked meals.
           </p>
         </div>
 
