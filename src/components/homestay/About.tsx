@@ -57,7 +57,7 @@ export function About() {
             height={960}
             className="relative h-full w-full rounded-2xl object-cover shadow-xl"
           />
-          <p className="mt-4 text-center text-sm" style={{ color: "#6E6A55" }}>
+          <p className="mt-6 text-center font-serif text-sm font-medium tracking-wide" style={{ color: "#6B7C3F" }}>
             Mr. and Mrs. Kadam — Owners of the Property
           </p>
         </div>
