@@ -1,9 +1,13 @@
-import room1 from "@/assets/room1.jpg";
 import room2 from "@/assets/room2.jpg";
+import standardRoom1 from "@/assets/standard-room-1.jpg.asset.json";
+import standardRoom2 from "@/assets/standard-room-2.jpg.asset.json";
+import standardRoom3 from "@/assets/standard-room-3.jpg.asset.json";
+import standardRoom4 from "@/assets/standard-room-4.jpg.asset.json";
 
 const rooms = [
   {
-    img: room1,
+    img: standardRoom1.url,
+    gallery: [standardRoom1.url, standardRoom2.url, standardRoom3.url, standardRoom4.url],
     name: "Standard Room",
     desc: "A clean, comfortable room with essential amenities for a restful stay.",
     amenities: ["Sleeps 2", "Comfortable bed", "Clean linens", "Hot water"],
@@ -47,7 +51,7 @@ export function Rooms() {
         </div>
 
         <div className="mt-14 grid gap-7 md:grid-cols-2">
-          {rooms.map((r, idx) => (
+          {rooms.map((r) => (
             <article
               key={r.name}
               className="group overflow-hidden rounded-2xl border bg-[#FBF4E4] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
@@ -63,6 +67,24 @@ export function Rooms() {
                   className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
+
+              {r.gallery ? (
+                <div className="grid grid-cols-4 gap-2 px-4 pt-4">
+                  {r.gallery.map((photo, photoIndex) => (
+                    <div key={photo} className="overflow-hidden rounded-lg">
+                      <img
+                        src={photo}
+                        alt={`${r.name} photo ${photoIndex + 1}`}
+                        loading="lazy"
+                        width={400}
+                        height={300}
+                        className="aspect-square w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+
               <div className="p-7">
                 <h3 className="font-serif text-2xl font-semibold">{r.name}</h3>
                 <p className="mt-3 text-sm leading-relaxed" style={{ color: "#3F3F2C" }}>
@@ -88,3 +110,4 @@ export function Rooms() {
     </section>
   );
 }
+
