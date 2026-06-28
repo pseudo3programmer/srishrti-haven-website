@@ -1,4 +1,4 @@
-import logo from "@/assets/logo.jpeg.asset.json";
+import logo from "@/assets/logo.jpeg";
 import { WHATSAPP_URL, INSTAGRAM_URL } from "./constants";
 
 const links = [
@@ -14,7 +14,7 @@ export function Footer() {
     <footer style={{ backgroundColor: "#2C2C1E", color: "#E8E1CD" }}>
       <div className="mx-auto grid max-w-6xl gap-8 px-6 py-14 md:grid-cols-3 md:items-start">
         <div className="flex items-start gap-3">
-          <img src={logo.url} alt="Shree Srushti Homestay logo" className="h-12 w-12 rounded-full object-cover" />
+          <img src={logo} alt="Shree Srushti Homestay logo" className="h-12 w-12 rounded-full object-cover" />
           <div>
             <div className="font-serif text-lg font-semibold" style={{ color: "#F5E9D3" }}>
               Shree Srushti Homestay

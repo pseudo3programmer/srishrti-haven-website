@@ -1,33 +1,33 @@
 import { useState } from "react";
 
-import standardRoom1 from "@/assets/standard-room-1.jpg.asset.json";
-import standardRoom2 from "@/assets/standard-room-2.jpg.asset.json";
-import standardRoom3 from "@/assets/standard-room-3.jpg.asset.json";
-import standardRoom4 from "@/assets/standard-room-4.jpg.asset.json";
-import classicRoom1 from "@/assets/classic-room-1.jpg.asset.json";
-import classicRoom2 from "@/assets/classic-room-2.jpg.asset.json";
-import classicRoom3 from "@/assets/classic-room-3.jpg.asset.json";
-import classicRoom4 from "@/assets/classic-room-4.jpg.asset.json";
-import classicRoom5 from "@/assets/classic-room-5.jpg.asset.json";
-import classicRoom6 from "@/assets/classic-room-6.jpg.asset.json";
+import standardRoom1 from "@/assets/standard-room-1.jpg";
+import standardRoom2 from "@/assets/standard-room-2.jpg";
+import standardRoom3 from "@/assets/standard-room-3.jpg";
+import standardRoom4 from "@/assets/standard-room-4.jpg";
+import classicRoom1 from "@/assets/classic-room-1.jpg";
+import classicRoom2 from "@/assets/classic-room-2.jpg";
+import classicRoom3 from "@/assets/classic-room-3.jpg";
+import classicRoom4 from "@/assets/classic-room-4.jpg";
+import classicRoom5 from "@/assets/classic-room-5.jpg";
+import classicRoom6 from "@/assets/classic-room-6.jpg";
 
 const rooms = [
   {
-    img: standardRoom1.url,
-    gallery: [standardRoom1.url, standardRoom2.url, standardRoom3.url, standardRoom4.url],
+    img: standardRoom1,
+    gallery: [standardRoom1, standardRoom2, standardRoom3, standardRoom4],
     name: "Standard Room",
     desc: "A clean, comfortable room with essential amenities for a restful stay.",
     amenities: ["Sleeps 2", "Comfortable bed", "Clean linens", "Hot water"],
   },
   {
-    img: classicRoom1.url,
+    img: classicRoom1,
     gallery: [
-      classicRoom1.url,
-      classicRoom2.url,
-      classicRoom3.url,
-      classicRoom4.url,
-      classicRoom5.url,
-      classicRoom6.url,
+      classicRoom1,
+      classicRoom2,
+      classicRoom3,
+      classicRoom4,
+      classicRoom5,
+      classicRoom6,
     ],
     name: "Classic Mountain View Room",
     desc: "Wake up to panoramic mountain vistas through large windows. Best for nature lovers.",

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/logo.jpeg.asset.json";
+import logo from "@/assets/logo.jpeg";
 
 const links = [
   { href: "#home", label: "Home" },
@@ -33,7 +33,7 @@ export function Nav() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
         <a href="#home" className="flex min-w-0 items-center gap-3">
           <img
-            src={logo.url}
+            src={logo}
             alt="Shree Srushti Homestay logo"
             className="h-11 w-11 shrink-0 rounded-full object-cover ring-1"
             style={{ boxShadow: "0 0 0 1px #6B7C3F33" }}
