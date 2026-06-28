@@ -7,7 +7,7 @@ import sunsetHills from "@/assets/gallery-sunset-hills.png";
 import mist from "@/assets/gallery-mist.png";
 import roomWindow from "@/assets/gallery-room-window.png";
 import cottageNight from "@/assets/gallery-cottage-night.png";
-import chaiToast from "@/assets/gallery-chai-toast.png";
+import mountainPanorama from "@/assets/gallery-mountain-panorama.png";
 import { Lightbox } from "./Lightbox";
 
 const images = [
@@ -19,7 +19,7 @@ const images = [
   { src: mist, alt: "Clouds drifting over the cliffs" },
   { src: roomWindow, alt: "Room window with hill view" },
   { src: cottageNight, alt: "Cottage entrance lit up at night" },
-  { src: chaiToast, alt: "Chai toast with friends overlooking the valley" },
+  { src: mountainPanorama, alt: "Panoramic mountain valley view" },
 ];
 
 export function Gallery() {
