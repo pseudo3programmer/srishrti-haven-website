@@ -90,12 +90,9 @@ export function Rooms() {
                         onClick={() => setActiveImages((prev) => ({ ...prev, [roomIndex]: photoIndex }))}
                         className={`shrink-0 overflow-hidden rounded-lg transition-all duration-300 ${
                           photoIndex === current
-                            ? "ring-2 ring-offset-1"
+                            ? "ring-2 ring-[#B8860B] ring-offset-1"
                             : "opacity-70 hover:opacity-100"
                         }`}
-                        style={{
-                          ringColor: photoIndex === current ? "#B8860B" : undefined,
-                        }}
                       >
                         <img
                           src={photo}
