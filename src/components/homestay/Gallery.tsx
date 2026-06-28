@@ -1,25 +1,25 @@
 import { useState } from "react";
-import thali from "@/assets/gallery-thali.png.asset.json";
-import verandah from "@/assets/gallery-verandah.png.asset.json";
-import sunsetBalcony from "@/assets/gallery-sunset-balcony.png.asset.json";
-import valley from "@/assets/gallery-valley.png.asset.json";
-import sunsetHills from "@/assets/gallery-sunset-hills.png.asset.json";
-import mist from "@/assets/gallery-mist.png.asset.json";
-import roomWindow from "@/assets/gallery-room-window.png.asset.json";
-import cottageNight from "@/assets/gallery-cottage-night.png.asset.json";
-import chaiToast from "@/assets/gallery-chai-toast.png.asset.json";
+import thali from "@/assets/gallery-thali.png";
+import verandah from "@/assets/gallery-verandah.png";
+import sunsetBalcony from "@/assets/gallery-sunset-balcony.png";
+import valley from "@/assets/gallery-valley.png";
+import sunsetHills from "@/assets/gallery-sunset-hills.png";
+import mist from "@/assets/gallery-mist.png";
+import roomWindow from "@/assets/gallery-room-window.png";
+import cottageNight from "@/assets/gallery-cottage-night.png";
+import chaiToast from "@/assets/gallery-chai-toast.png";
 import { Lightbox } from "./Lightbox";
 
 const images = [
-  { src: thali.url, alt: "Home-cooked thali with valley view" },
-  { src: verandah.url, alt: "Verandah seating overlooking the hills" },
-  { src: sunsetBalcony.url, alt: "Sunset from the cottage balcony" },
-  { src: valley.url, alt: "Lush Matheran valley" },
-  { src: sunsetHills.url, alt: "Golden sunset over misty hills" },
-  { src: mist.url, alt: "Clouds drifting over the cliffs" },
-  { src: roomWindow.url, alt: "Room window with hill view" },
-  { src: cottageNight.url, alt: "Cottage entrance lit up at night" },
-  { src: chaiToast.url, alt: "Chai toast with friends overlooking the valley" },
+  { src: thali, alt: "Home-cooked thali with valley view" },
+  { src: verandah, alt: "Verandah seating overlooking the hills" },
+  { src: sunsetBalcony, alt: "Sunset from the cottage balcony" },
+  { src: valley, alt: "Lush Matheran valley" },
+  { src: sunsetHills, alt: "Golden sunset over misty hills" },
+  { src: mist, alt: "Clouds drifting over the cliffs" },
+  { src: roomWindow, alt: "Room window with hill view" },
+  { src: cottageNight, alt: "Cottage entrance lit up at night" },
+  { src: chaiToast, alt: "Chai toast with friends overlooking the valley" },
 ];
 
 export function Gallery() {
