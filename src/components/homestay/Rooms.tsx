@@ -17,7 +17,7 @@ const rooms = [
     gallery: [standardRoom1, standardRoom2, standardRoom3, standardRoom4],
     name: "Standard Room",
     desc: "A clean, comfortable room with essential amenities for a restful stay.",
-    amenities: ["Sleeps 2", "Comfortable bed", "Clean linens", "Hot water"],
+    amenities: [],
   },
   {
     img: classicRoom1,
@@ -31,7 +31,7 @@ const rooms = [
     ],
     name: "Classic Mountain View Room",
     desc: "Wake up to panoramic mountain vistas through large windows. Best for nature lovers.",
-    amenities: ["Sleeps 2", "Mountain view", "Hot water"],
+    amenities: [],
   },
 ];
 
@@ -124,18 +124,20 @@ export function Rooms() {
                   <p className="mt-3 text-sm leading-relaxed" style={{ color: "#3F3F2C" }}>
                     {r.desc}
                   </p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {r.amenities.map((a, i) => (
-                      <span
-                        key={a}
-                        className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs"
-                        style={{ borderColor: "#6B7C3F40", color: "#4A7C59" }}
-                      >
-                        {icon(i)}
-                        {a}
-                      </span>
-                    ))}
-                  </div>
+                  {r.amenities.length > 0 && (
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {r.amenities.map((a, i) => (
+                        <span
+                          key={a}
+                          className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs"
+                          style={{ borderColor: "#6B7C3F40", color: "#4A7C59" }}
+                        >
+                          {icon(i)}
+                          {a}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </article>
             );
