@@ -1,10 +1,15 @@
 import { useState } from "react";
 
-import room2 from "@/assets/room2.jpg";
 import standardRoom1 from "@/assets/standard-room-1.jpg.asset.json";
 import standardRoom2 from "@/assets/standard-room-2.jpg.asset.json";
 import standardRoom3 from "@/assets/standard-room-3.jpg.asset.json";
 import standardRoom4 from "@/assets/standard-room-4.jpg.asset.json";
+import classicRoom1 from "@/assets/classic-room-1.jpg.asset.json";
+import classicRoom2 from "@/assets/classic-room-2.jpg.asset.json";
+import classicRoom3 from "@/assets/classic-room-3.jpg.asset.json";
+import classicRoom4 from "@/assets/classic-room-4.jpg.asset.json";
+import classicRoom5 from "@/assets/classic-room-5.jpg.asset.json";
+import classicRoom6 from "@/assets/classic-room-6.jpg.asset.json";
 
 const rooms = [
   {
@@ -15,8 +20,15 @@ const rooms = [
     amenities: ["Sleeps 2", "Comfortable bed", "Clean linens", "Hot water"],
   },
   {
-    img: room2,
-    gallery: [room2],
+    img: classicRoom1.url,
+    gallery: [
+      classicRoom1.url,
+      classicRoom2.url,
+      classicRoom3.url,
+      classicRoom4.url,
+      classicRoom5.url,
+      classicRoom6.url,
+    ],
     name: "Classic Mountain View Room",
     desc: "Wake up to panoramic mountain vistas through large windows. Best for nature lovers.",
     amenities: ["Sleeps 2", "Mountain view", "Hot water"],
