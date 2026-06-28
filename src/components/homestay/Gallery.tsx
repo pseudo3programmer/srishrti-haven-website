@@ -1,25 +1,23 @@
 import { useState } from "react";
-import g1 from "@/assets/g1.jpg";
-import g2 from "@/assets/g2.jpg";
-import g3 from "@/assets/g3.jpg";
-import g4 from "@/assets/g4.jpg";
-import g5 from "@/assets/g5.jpg";
-import g6 from "@/assets/g6.jpg";
-import about from "@/assets/about.jpg";
-import room1 from "@/assets/room1.jpg";
-import room2 from "@/assets/room2.jpg";
+import thali from "@/assets/gallery-thali.png.asset.json";
+import verandah from "@/assets/gallery-verandah.png.asset.json";
+import sunsetBalcony from "@/assets/gallery-sunset-balcony.png.asset.json";
+import valley from "@/assets/gallery-valley.png.asset.json";
+import sunsetHills from "@/assets/gallery-sunset-hills.png.asset.json";
+import mist from "@/assets/gallery-mist.png.asset.json";
+import roomWindow from "@/assets/gallery-room-window.png.asset.json";
+import cottageNight from "@/assets/gallery-cottage-night.png.asset.json";
 import { Lightbox } from "./Lightbox";
 
 const images = [
-  { src: g3, alt: "Sunset valley view from Matheran" },
-  { src: about, alt: "Cottage exterior" },
-  { src: g2, alt: "Red-earth forest trail in mist" },
-  { src: room1, alt: "Deluxe cottage bedroom" },
-  { src: g4, alt: "Verandah swing with flowers" },
-  { src: g1, alt: "Home-cooked Maharashtrian thali" },
-  { src: room2, alt: "Family suite with hill view" },
-  { src: g5, alt: "Bonfire under the night sky" },
-  { src: g6, alt: "Cup of masala chai" },
+  { src: thali.url, alt: "Home-cooked thali with valley view" },
+  { src: verandah.url, alt: "Verandah seating overlooking the hills" },
+  { src: sunsetBalcony.url, alt: "Sunset from the cottage balcony" },
+  { src: valley.url, alt: "Lush Matheran valley" },
+  { src: sunsetHills.url, alt: "Golden sunset over misty hills" },
+  { src: mist.url, alt: "Clouds drifting over the cliffs" },
+  { src: roomWindow.url, alt: "Room window with hill view" },
+  { src: cottageNight.url, alt: "Cottage entrance lit up at night" },
 ];
 
 export function Gallery() {
