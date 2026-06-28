@@ -17,7 +17,7 @@ const rooms = [
     gallery: [standardRoom1, standardRoom2, standardRoom3, standardRoom4],
     name: "Standard Room",
     desc: "A clean, comfortable room with essential amenities for a restful stay.",
-    amenities: ["Sleeps 2", "Comfortable bed", "Clean linens", "Hot water"],
+    amenities: [],
   },
   {
     img: classicRoom1,
@@ -31,7 +31,7 @@ const rooms = [
     ],
     name: "Classic Mountain View Room",
     desc: "Wake up to panoramic mountain vistas through large windows. Best for nature lovers.",
-    amenities: ["Sleeps 2", "Mountain view", "Hot water"],
+    amenities: [],
   },
 ];
 
