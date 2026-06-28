@@ -66,7 +66,7 @@ export function Rooms() {
           </div>
           <h2 className="mt-3 font-serif text-3xl font-semibold sm:text-4xl">Rooms & Cottages</h2>
           <p className="mx-auto mt-3 max-w-xl text-sm" style={{ color: "#6E6A55" }}>
-            Two quiet spaces. Choose whichever suits your trip — every stay includes home-cooked meals.
+            Two quiet spaces. Choose whichever suits your trip
           </p>
         </div>
 
