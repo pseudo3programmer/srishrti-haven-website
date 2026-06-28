@@ -1,6 +1,5 @@
 import room1 from "@/assets/room1.jpg";
 import room2 from "@/assets/room2.jpg";
-import { WHATSAPP_URL } from "./constants";
 
 const rooms = [
   {
@@ -81,18 +80,6 @@ export function Rooms() {
                     </span>
                   ))}
                 </div>
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.03]"
-                  style={{ backgroundColor: "#6B7C3F" }}
-                >
-                  Book This Room
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </a>
               </div>
             </article>
           ))}
