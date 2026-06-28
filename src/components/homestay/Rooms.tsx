@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import room2 from "@/assets/room2.jpg";
 import standardRoom1 from "@/assets/standard-room-1.jpg.asset.json";
 import standardRoom2 from "@/assets/standard-room-2.jpg.asset.json";
@@ -14,6 +16,7 @@ const rooms = [
   },
   {
     img: room2,
+    gallery: [room2],
     name: "Classic Mountain View Room",
     desc: "Wake up to panoramic mountain vistas through large windows. Best for nature lovers.",
     amenities: ["Sleeps 2", "Mountain view", "Hot water"],
@@ -35,6 +38,11 @@ const icon = (i: number) => {
 };
 
 export function Rooms() {
+  const [activeImages, setActiveImages] = useState<Record<number, number>>({
+    0: 0,
+    1: 0,
+  });
+
   return (
     <section id="rooms" className="px-6 py-24 sm:py-28" data-fade>
       <div className="mx-auto max-w-6xl">
@@ -51,63 +59,77 @@ export function Rooms() {
         </div>
 
         <div className="mt-14 grid gap-7 md:grid-cols-2">
-          {rooms.map((r) => (
-            <article
-              key={r.name}
-              className="group overflow-hidden rounded-2xl border bg-[#FBF4E4] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-              style={{ borderColor: "#6B7C3F33" }}
-            >
-              <div className="overflow-hidden">
-                <img
-                  src={r.img}
-                  alt={r.name}
-                  loading="lazy"
-                  width={1280}
-                  height={960}
-                  className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
+          {rooms.map((r, roomIndex) => {
+            const current = activeImages[roomIndex] ?? 0;
+            const currentImg = r.gallery[current] || r.img;
+            const hasMultiple = r.gallery.length > 1;
 
-              {r.gallery ? (
-                <div className="grid grid-cols-4 gap-2 px-4 pt-4">
-                  {r.gallery.map((photo, photoIndex) => (
-                    <div key={photo} className="overflow-hidden rounded-lg">
-                      <img
-                        src={photo}
-                        alt={`${r.name} photo ${photoIndex + 1}`}
-                        loading="lazy"
-                        width={400}
-                        height={300}
-                        className="aspect-square w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
-                    </div>
-                  ))}
+            return (
+              <article
+                key={r.name}
+                className="group overflow-hidden rounded-2xl border bg-[#FBF4E4] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                style={{ borderColor: "#6B7C3F33" }}
+              >
+                <div className="overflow-hidden">
+                  <img
+                    src={currentImg}
+                    alt={r.name}
+                    loading="lazy"
+                    width={1280}
+                    height={960}
+                    className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                 </div>
-              ) : null}
 
-              <div className="p-7">
-                <h3 className="font-serif text-2xl font-semibold">{r.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed" style={{ color: "#3F3F2C" }}>
-                  {r.desc}
-                </p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {r.amenities.map((a, i) => (
-                    <span
-                      key={a}
-                      className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs"
-                      style={{ borderColor: "#6B7C3F40", color: "#4A7C59" }}
-                    >
-                      {icon(i)}
-                      {a}
-                    </span>
-                  ))}
+                {hasMultiple ? (
+                  <div className="flex gap-2 overflow-x-auto px-4 pt-4 pb-1 scrollbar-hide">
+                    {r.gallery.map((photo, photoIndex) => (
+                      <button
+                        key={photo}
+                        type="button"
+                        onClick={() => setActiveImages((prev) => ({ ...prev, [roomIndex]: photoIndex }))}
+                        className={`shrink-0 overflow-hidden rounded-lg transition-all duration-300 ${
+                          photoIndex === current
+                            ? "ring-2 ring-[#B8860B] ring-offset-1"
+                            : "opacity-70 hover:opacity-100"
+                        }`}
+                      >
+                        <img
+                          src={photo}
+                          alt={`${r.name} photo ${photoIndex + 1}`}
+                          loading="lazy"
+                          width={120}
+                          height={90}
+                          className="aspect-[4/3] h-20 w-28 object-cover"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                ) : null}
+
+                <div className="p-7">
+                  <h3 className="font-serif text-2xl font-semibold">{r.name}</h3>
+                  <p className="mt-3 text-sm leading-relaxed" style={{ color: "#3F3F2C" }}>
+                    {r.desc}
+                  </p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {r.amenities.map((a, i) => (
+                      <span
+                        key={a}
+                        className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs"
+                        style={{ borderColor: "#6B7C3F40", color: "#4A7C59" }}
+                      >
+                        {icon(i)}
+                        {a}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
-
