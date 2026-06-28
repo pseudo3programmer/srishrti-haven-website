@@ -1,6 +1,5 @@
 import room1 from "@/assets/room1.jpg";
 import room2 from "@/assets/room2.jpg";
-import { WHATSAPP_URL } from "./constants";
 
 const rooms = [
   {
