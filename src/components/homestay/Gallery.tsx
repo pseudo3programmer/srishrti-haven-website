@@ -19,7 +19,7 @@ const images = [
   { src: mist, alt: "Clouds drifting over the cliffs" },
   { src: roomWindow, alt: "Room window with hill view" },
   { src: cottageNight, alt: "Cottage entrance lit up at night" },
-  { src: chaiToast, alt: "Chai toast with friends overlooking the valley" },
+  { src: mountainPanorama, alt: "Panoramic mountain valley view" },
 ];
 
 export function Gallery() {
