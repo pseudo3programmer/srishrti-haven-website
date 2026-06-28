@@ -7,6 +7,7 @@ import sunsetHills from "@/assets/gallery-sunset-hills.png.asset.json";
 import mist from "@/assets/gallery-mist.png.asset.json";
 import roomWindow from "@/assets/gallery-room-window.png.asset.json";
 import cottageNight from "@/assets/gallery-cottage-night.png.asset.json";
+import chaiToast from "@/assets/gallery-chai-toast.png.asset.json";
 import { Lightbox } from "./Lightbox";
 
 const images = [
