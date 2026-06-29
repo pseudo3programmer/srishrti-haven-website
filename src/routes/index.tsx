@@ -60,6 +60,7 @@ function Home() {
         <About />
         <Rooms />
         <Amenities />
+        <Menu />
         <Gallery />
         <Location />
         <Reviews />
