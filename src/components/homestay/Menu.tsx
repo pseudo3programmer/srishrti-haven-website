@@ -156,7 +156,15 @@ export function Menu() {
         </div>
       </div>
 
-      {open && <Lightbox images={[menuCard.url]} index={0} onClose={() => setOpen(false)} onPrev={() => {}} onNext={() => {}} />}
+      {open && (
+        <Lightbox
+          images={[{ src: menuCard.url, alt: "Shree Srushti Homestay menu card" }]}
+          index={0}
+          onClose={() => setOpen(false)}
+          onPrev={() => {}}
+          onNext={() => {}}
+        />
+      )}
     </section>
   );
 }

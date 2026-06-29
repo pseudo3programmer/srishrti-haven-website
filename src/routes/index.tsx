@@ -5,6 +5,7 @@ import { Hero } from "@/components/homestay/Hero";
 import { About } from "@/components/homestay/About";
 import { Rooms } from "@/components/homestay/Rooms";
 import { Amenities } from "@/components/homestay/Amenities";
+import { Menu } from "@/components/homestay/Menu";
 import { Gallery } from "@/components/homestay/Gallery";
 import { Location } from "@/components/homestay/Location";
 import { Reviews } from "@/components/homestay/Reviews";
