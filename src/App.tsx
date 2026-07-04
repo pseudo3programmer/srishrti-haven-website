@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { Nav } from "@/components/homestay/Nav";
 import { Hero } from "@/components/homestay/Hero";
@@ -13,27 +12,7 @@ import { Contact } from "@/components/homestay/Contact";
 import { Footer } from "@/components/homestay/Footer";
 import { FloatingButtons } from "@/components/homestay/FloatingButtons";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Shree Srushti Homestay — Matheran, Maharashtra" },
-      {
-        name: "description",
-        content:
-          "A peaceful cottage homestay in Matheran, Maharashtra. Forest views, home-cooked meals, and quiet mornings. Book direct on WhatsApp.",
-      },
-      { property: "og:title", content: "Shree Srushti Homestay — Matheran" },
-      {
-        property: "og:description",
-        content: "A peaceful cottage escape in Matheran's misty hills.",
-      },
-    ],
-  }),
-  component: Home,
-});
-
-function Home() {
-  // Fade-in-up on scroll
+export default function App() {
   useEffect(() => {
     const els = document.querySelectorAll<HTMLElement>("[data-fade]");
     els.forEach((el) => el.classList.add("fade-up"));
