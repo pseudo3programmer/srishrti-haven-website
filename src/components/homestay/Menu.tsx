@@ -55,10 +55,10 @@ function SectionTitle({ title, time }: { title: string; time?: string }) {
   return (
     <div className="flex items-center justify-center gap-3 mb-6">
       <span className="h-px flex-1 max-w-16" style={{ backgroundColor: "#B8860B66" }} />
-      <h3 className="font-serif text-xl sm:text-2xl font-semibold whitespace-nowrap" style={{ color: "#2C2C1E" }}>
+      <h3 className="font-serif text-xl sm:text-2xl font-semibold min-w-0 text-center" style={{ color: "#2C2C1E" }}>
         {title}
         {time && (
-          <span className="ml-2 text-xs font-sans font-normal tracking-wide" style={{ color: "#6E6A55" }}>
+          <span className="block mt-1 text-xs font-sans font-normal tracking-wide" style={{ color: "#6E6A55" }}>
             {time}
           </span>
         )}
@@ -75,8 +75,8 @@ function Row({ name, desc, price }: { name: string; desc?: string; price: string
         <span className="text-sm font-medium" style={{ color: "#2C2C1E" }}>{name}</span>
         {desc && <span className="ml-1.5 text-xs" style={{ color: "#6E6A55" }}>({desc})</span>}
       </div>
-      <span className="flex-1 border-b border-dotted self-end mb-1.5" style={{ borderColor: "#B8860B55" }} />
-      <span className="text-sm font-semibold tabular-nums" style={{ color: "#6B7C3F" }}>
+      <span className="hidden sm:block flex-1 border-b border-dotted self-end mb-1.5" style={{ borderColor: "#B8860B55" }} />
+      <span className="shrink-0 text-sm font-semibold tabular-nums" style={{ color: "#6B7C3F" }}>
         {price === "—" ? price : `₹${price}`}
       </span>
     </div>
@@ -103,7 +103,7 @@ export function Menu() {
 
         <div className="mt-12 grid gap-7 md:grid-cols-2">
           <div
-            className="rounded-2xl border bg-[#FBF4E4] p-7 shadow-sm"
+            className="rounded-2xl border bg-[#FBF4E4] p-5 sm:p-7 shadow-sm"
             style={{ borderColor: "#6B7C3F33" }}
           >
             <SectionTitle title="Breakfast" time="8:30 — 10:30 AM" />
@@ -116,7 +116,7 @@ export function Menu() {
 
           <div className="space-y-7">
             <div
-              className="rounded-2xl border bg-[#FBF4E4] p-7 shadow-sm"
+              className="rounded-2xl border bg-[#FBF4E4] p-5 sm:p-7 shadow-sm"
               style={{ borderColor: "#6B7C3F33" }}
             >
               <SectionTitle title="Lunch & Dinner" time="12:30—2:30 PM • 8:00—9:30 PM" />
@@ -128,7 +128,7 @@ export function Menu() {
             </div>
 
             <div
-              className="rounded-2xl border bg-[#FBF4E4] p-7 shadow-sm"
+              className="rounded-2xl border bg-[#FBF4E4] p-5 sm:p-7 shadow-sm"
               style={{ borderColor: "#6B7C3F33" }}
             >
               <SectionTitle title="Other" />

@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import path from "path";
+import { imagetools } from "vite-imagetools";
 
 // Static SPA build for GitHub Pages.
 // Base is "/" because the site is served from a custom domain (shreeshrushticottage.com).
@@ -10,7 +11,7 @@ import path from "path";
 // change `base` to "/<repo>/".
 export default defineConfig({
   base: "/",
-  plugins: [react(), tailwindcss(), tsconfigPaths()],
+  plugins: [imagetools(), react(), tailwindcss(), tsconfigPaths()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

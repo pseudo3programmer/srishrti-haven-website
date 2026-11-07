@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 interface Props {
-  images: { src: string; alt: string }[];
+  images: { src: string; srcSet?: string; alt: string }[];
   index: number;
   onClose: () => void;
   onPrev: () => void;
@@ -67,6 +67,9 @@ export function Lightbox({ images, index, onClose, onPrev, onNext }: Props) {
       <img
         key={index}
         src={img.src}
+        srcSet={img.srcSet}
+        sizes="92vw"
+        decoding="async"
         alt={img.alt}
         className="lightbox-enter max-h-[85vh] max-w-[92vw] rounded-xl object-contain shadow-2xl"
         onClick={(e) => e.stopPropagation()}

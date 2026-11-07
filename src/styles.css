@@ -130,3 +130,14 @@
   vertical-align: middle;
   margin: 0 12px;
 }
+
+@media (max-width: 639px) {
+  main > section:not(#home) { padding-block: 3.5rem; }
+  .decor-rule { width: 24px; margin-inline: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fade-up { opacity: 1; transform: none; transition: none; }
+  .bob, .pulse-gold, .pulse-wa, .lightbox-enter { animation: none; }
+}

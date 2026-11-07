@@ -19,7 +19,7 @@ export function Contact() {
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {/* WhatsApp */}
           <div
-            className="rounded-2xl border bg-[#FBF4E4] p-8 transition-transform hover:-translate-y-1"
+            className="rounded-2xl border bg-[#FBF4E4] p-5 sm:p-8 transition-transform hover:-translate-y-1"
             style={{ borderColor: "#6B7C3F40" }}
           >
             <div className="grid h-14 w-14 place-items-center rounded-full" style={{ backgroundColor: "#25D366" }}>
@@ -47,7 +47,7 @@ export function Contact() {
 
           {/* Instagram */}
           <div
-            className="rounded-2xl border bg-[#FBF4E4] p-8 transition-transform hover:-translate-y-1"
+            className="rounded-2xl border bg-[#FBF4E4] p-5 sm:p-8 transition-transform hover:-translate-y-1"
             style={{ borderColor: "#6B7C3F40" }}
           >
             <div
