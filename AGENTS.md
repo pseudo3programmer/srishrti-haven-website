@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Use vite-imagetools to generate bundled WebP photo sizes and srcsets at build time; keep original photos local so GitHub Pages needs no image CDN.
