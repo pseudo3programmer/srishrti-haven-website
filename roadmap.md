@@ -1,3 +1,3 @@
-- [ ] Serve compressed, screen-sized photos while retaining bundled originals for GitHub Pages.
-- [ ] Improve small-screen photo grids and spacing without changing content.
-- [ ] Verify mobile/desktop layout, thumbnail selection, and enlarged gallery photos.
+- [x] Serve compressed, screen-sized photos while retaining bundled originals for GitHub Pages.
+- [x] Improve small-screen photo grids and spacing without changing content.
+- [x] Verify mobile/desktop layout, thumbnail selection, and enlarged gallery photos.
