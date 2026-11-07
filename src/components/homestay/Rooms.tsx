@@ -1,15 +1,38 @@
 import { useState } from "react";
 
-import standardRoom1 from "@/assets/standard-room-1.jpg";
-import standardRoom2 from "@/assets/standard-room-2.jpg";
-import standardRoom3 from "@/assets/standard-room-3.jpg";
-import standardRoom4 from "@/assets/standard-room-4.jpg";
-import classicRoom1 from "@/assets/classic-room-1.jpg";
-import classicRoom2 from "@/assets/classic-room-2.jpg";
-import classicRoom3 from "@/assets/classic-room-3.jpg";
-import classicRoom4 from "@/assets/classic-room-4.jpg";
-import classicRoom5 from "@/assets/classic-room-5.jpg";
-import classicRoom6 from "@/assets/classic-room-6.jpg";
+import standardRoom1 from "@/assets/standard-room-1.jpg?w=1280&format=webp&quality=78";
+import standardRoom1SrcSet from "@/assets/standard-room-1.jpg?w=160;320;640;960;1280&format=webp&quality=78&as=srcset";
+import standardRoom2 from "@/assets/standard-room-2.jpg?w=1280&format=webp&quality=78";
+import standardRoom2SrcSet from "@/assets/standard-room-2.jpg?w=160;320;640;960;1280&format=webp&quality=78&as=srcset";
+import standardRoom3 from "@/assets/standard-room-3.jpg?w=1280&format=webp&quality=78";
+import standardRoom3SrcSet from "@/assets/standard-room-3.jpg?w=160;320;640;960;1280&format=webp&quality=78&as=srcset";
+import standardRoom4 from "@/assets/standard-room-4.jpg?w=1280&format=webp&quality=78";
+import standardRoom4SrcSet from "@/assets/standard-room-4.jpg?w=160;320;640;960;1280&format=webp&quality=78&as=srcset";
+import classicRoom1 from "@/assets/classic-room-1.jpg?w=1280&format=webp&quality=78";
+import classicRoom1SrcSet from "@/assets/classic-room-1.jpg?w=160;320;640;960;1280&format=webp&quality=78&as=srcset";
+import classicRoom2 from "@/assets/classic-room-2.jpg?w=1280&format=webp&quality=78";
+import classicRoom2SrcSet from "@/assets/classic-room-2.jpg?w=160;320;640;960;1280&format=webp&quality=78&as=srcset";
+import classicRoom3 from "@/assets/classic-room-3.jpg?w=1280&format=webp&quality=78";
+import classicRoom3SrcSet from "@/assets/classic-room-3.jpg?w=160;320;640;960;1280&format=webp&quality=78&as=srcset";
+import classicRoom4 from "@/assets/classic-room-4.jpg?w=1280&format=webp&quality=78";
+import classicRoom4SrcSet from "@/assets/classic-room-4.jpg?w=160;320;640;960;1280&format=webp&quality=78&as=srcset";
+import classicRoom5 from "@/assets/classic-room-5.jpg?w=1280&format=webp&quality=78";
+import classicRoom5SrcSet from "@/assets/classic-room-5.jpg?w=160;320;640;960;1280&format=webp&quality=78&as=srcset";
+import classicRoom6 from "@/assets/classic-room-6.jpg?w=1280&format=webp&quality=78";
+import classicRoom6SrcSet from "@/assets/classic-room-6.jpg?w=160;320;640;960;1280&format=webp&quality=78&as=srcset";
+
+const photoSrcSets: Record<string, string> = {
+  [standardRoom1]: standardRoom1SrcSet,
+  [standardRoom2]: standardRoom2SrcSet,
+  [standardRoom3]: standardRoom3SrcSet,
+  [standardRoom4]: standardRoom4SrcSet,
+  [classicRoom1]: classicRoom1SrcSet,
+  [classicRoom2]: classicRoom2SrcSet,
+  [classicRoom3]: classicRoom3SrcSet,
+  [classicRoom4]: classicRoom4SrcSet,
+  [classicRoom5]: classicRoom5SrcSet,
+  [classicRoom6]: classicRoom6SrcSet,
+};
 
 const rooms = [
   {
@@ -70,7 +93,7 @@ export function Rooms() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-7 md:grid-cols-2">
+        <div className="mt-14 grid min-w-0 gap-7 md:grid-cols-2">
           {rooms.map((r, roomIndex) => {
             const current = activeImages[roomIndex] ?? 0;
             const currentImg = r.gallery[current] || r.img;
@@ -79,12 +102,15 @@ export function Rooms() {
             return (
               <article
                 key={r.name}
-                className="group overflow-hidden rounded-2xl border bg-[#FBF4E4] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="group min-w-0 overflow-hidden rounded-2xl border bg-[#FBF4E4] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 style={{ borderColor: "#6B7C3F33" }}
               >
                 <div className="overflow-hidden">
                   <img
                     src={currentImg}
+                    srcSet={photoSrcSets[currentImg]}
+                    sizes="(min-width: 1200px) 560px, (min-width: 768px) calc((100vw - 76px) / 2), calc(100vw - 48px)"
+                    decoding="async"
                     alt={r.name}
                     loading="lazy"
                     width={1280}
@@ -102,12 +128,15 @@ export function Rooms() {
                         onClick={() => setActiveImages((prev) => ({ ...prev, [roomIndex]: photoIndex }))}
                         className={`shrink-0 overflow-hidden rounded-lg transition-all duration-300 ${
                           photoIndex === current
-                            ? "ring-2 ring-[#B8860B] ring-offset-1"
+                            ? "ring-2 ring-ring ring-offset-1"
                             : "opacity-70 hover:opacity-100"
                         }`}
                       >
                         <img
                           src={photo}
+                          srcSet={photoSrcSets[photo]}
+                          sizes="112px"
+                          decoding="async"
                           alt={`${r.name} photo ${photoIndex + 1}`}
                           loading="lazy"
                           width={120}
@@ -119,7 +148,7 @@ export function Rooms() {
                   </div>
                 ) : null}
 
-                <div className="p-7">
+                <div className="p-5 sm:p-7">
                   <h3 className="font-serif text-2xl font-semibold">{r.name}</h3>
                   <p className="mt-3 text-sm leading-relaxed" style={{ color: "#3F3F2C" }}>
                     {r.desc}

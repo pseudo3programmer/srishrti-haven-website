@@ -1,25 +1,35 @@
 import { useState } from "react";
-import thali from "@/assets/gallery-thali.png";
-import verandah from "@/assets/gallery-verandah.png";
-import sunsetBalcony from "@/assets/gallery-sunset-balcony.png";
-import valley from "@/assets/gallery-valley.png";
-import sunsetHills from "@/assets/gallery-sunset-hills.png";
-import mist from "@/assets/gallery-mist.png";
-import roomWindow from "@/assets/gallery-room-window.png";
-import cottageNight from "@/assets/gallery-cottage-night.png";
-import mountainPanorama from "@/assets/gallery-mountain-panorama.png";
+import thali from "@/assets/gallery-thali.png?w=1280&format=webp&quality=78";
+import thaliSrcSet from "@/assets/gallery-thali.png?w=160;320;640;960;1280&format=webp&quality=78&as=srcset";
+import verandah from "@/assets/gallery-verandah.png?w=1280&format=webp&quality=78";
+import verandahSrcSet from "@/assets/gallery-verandah.png?w=160;320;640;960;1280&format=webp&quality=78&as=srcset";
+import sunsetBalcony from "@/assets/gallery-sunset-balcony.png?w=1280&format=webp&quality=78";
+import sunsetBalconySrcSet from "@/assets/gallery-sunset-balcony.png?w=160;320;640;960;1280&format=webp&quality=78&as=srcset";
+import valley from "@/assets/gallery-valley.png?w=1280&format=webp&quality=78";
+import valleySrcSet from "@/assets/gallery-valley.png?w=160;320;640;960;1280&format=webp&quality=78&as=srcset";
+import sunsetHills from "@/assets/gallery-sunset-hills.png?w=1280&format=webp&quality=78";
+import sunsetHillsSrcSet from "@/assets/gallery-sunset-hills.png?w=160;320;640;960;1280&format=webp&quality=78&as=srcset";
+import mist from "@/assets/gallery-mist.png?w=1280&format=webp&quality=78";
+import mistSrcSet from "@/assets/gallery-mist.png?w=160;320;640;960;1280&format=webp&quality=78&as=srcset";
+import roomWindow from "@/assets/gallery-room-window.png?w=1280&format=webp&quality=78";
+import roomWindowSrcSet from "@/assets/gallery-room-window.png?w=160;320;640;960;1280&format=webp&quality=78&as=srcset";
+import cottageNight from "@/assets/gallery-cottage-night.png?w=1280&format=webp&quality=78";
+import cottageNightSrcSet from "@/assets/gallery-cottage-night.png?w=160;320;640;960;1280&format=webp&quality=78&as=srcset";
+import mountainPanorama from "@/assets/gallery-mountain-panorama.png?w=1280&format=webp&quality=78";
+import mountainPanoramaSrcSet from "@/assets/gallery-mountain-panorama.png?w=160;320;640;960;1280&format=webp&quality=78&as=srcset";
+import { Button } from "@/components/ui/button";
 import { Lightbox } from "./Lightbox";
 
 const images = [
-  { src: thali, alt: "Home-cooked thali with valley view" },
-  { src: verandah, alt: "Verandah seating overlooking the hills" },
-  { src: sunsetBalcony, alt: "Sunset from the cottage balcony" },
-  { src: valley, alt: "Lush Matheran valley" },
-  { src: sunsetHills, alt: "Golden sunset over misty hills" },
-  { src: mist, alt: "Clouds drifting over the cliffs" },
-  { src: roomWindow, alt: "Room window with hill view" },
-  { src: cottageNight, alt: "Cottage entrance lit up at night" },
-  { src: mountainPanorama, alt: "Panoramic mountain valley view" },
+  { src: thali, srcSet: thaliSrcSet, alt: "Home-cooked thali with valley view" },
+  { src: verandah, srcSet: verandahSrcSet, alt: "Verandah seating overlooking the hills" },
+  { src: sunsetBalcony, srcSet: sunsetBalconySrcSet, alt: "Sunset from the cottage balcony" },
+  { src: valley, srcSet: valleySrcSet, alt: "Lush Matheran valley" },
+  { src: sunsetHills, srcSet: sunsetHillsSrcSet, alt: "Golden sunset over misty hills" },
+  { src: mist, srcSet: mistSrcSet, alt: "Clouds drifting over the cliffs" },
+  { src: roomWindow, srcSet: roomWindowSrcSet, alt: "Room window with hill view" },
+  { src: cottageNight, srcSet: cottageNightSrcSet, alt: "Cottage entrance lit up at night" },
+  { src: mountainPanorama, srcSet: mountainPanoramaSrcSet, alt: "Panoramic mountain valley view" },
 ];
 
 export function Gallery() {
@@ -37,22 +47,26 @@ export function Gallery() {
           <h2 className="mt-3 font-serif text-3xl font-semibold sm:text-4xl">Gallery</h2>
         </div>
 
-        <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-3 min-[480px]:grid-cols-2 sm:gap-4 md:grid-cols-3">
           {images.map((img, i) => (
-            <button
+            <Button variant="ghost"
               key={i}
               onClick={() => setOpen(i)}
-              className="group relative overflow-hidden rounded-xl"
-              style={{ aspectRatio: "1 / 1" }}
+              className="group relative h-auto aspect-square overflow-hidden rounded-xl p-0 hover:bg-transparent"
             >
               <img
                 src={img.src}
+                srcSet={img.srcSet}
+                sizes="(min-width: 1200px) 374px, (min-width: 768px) calc((100vw - 80px) / 3), (min-width: 480px) calc((100vw - 60px) / 2), calc(100vw - 48px)"
+                width={640}
+                height={640}
+                decoding="async"
                 alt={img.alt}
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-[#2C2C1E]/0 transition-colors group-hover:bg-[#2C2C1E]/30" />
-            </button>
+            </Button>
           ))}
         </div>
       </div>

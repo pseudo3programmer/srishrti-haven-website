@@ -1,4 +1,5 @@
-import hero from "@/assets/hero.jpg";
+import hero from "@/assets/hero.jpg?w=1920&format=webp&quality=80";
+import heroSrcSet from "@/assets/hero.jpg?w=640;960;1280;1920&format=webp&quality=80&as=srcset";
 import { WHATSAPP_URL } from "./constants";
 
 export function Hero() {
@@ -6,6 +7,11 @@ export function Hero() {
     <section id="home" className="relative min-h-[100svh] w-full overflow-hidden">
       <img
         src={hero}
+        srcSet={heroSrcSet}
+        sizes="100vw"
+        fetchPriority="high"
+        loading="eager"
+        decoding="async"
         alt="Misty hills of Matheran at golden hour"
         className="absolute inset-0 h-full w-full object-cover"
         width={1920}
@@ -14,7 +20,7 @@ export function Hero() {
       <div className="absolute inset-0" style={{ backgroundColor: "rgba(43, 53, 20, 0.55)" }} />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#2C2C1E]/60" />
 
-      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-5xl flex-col items-center justify-center px-6 pt-24 text-center">
+      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-5xl flex-col items-center justify-center px-6 pt-24 pb-24 text-center">
         <div
           className="mb-5 text-[11px] font-semibold uppercase sm:text-xs"
           style={{ color: "#D4A53A", letterSpacing: "0.32em" }}
@@ -25,8 +31,8 @@ export function Hero() {
         </div>
 
         <h1
-          className="font-serif font-semibold leading-[1.05]"
-          style={{ color: "#FBF8EF", fontSize: "clamp(36px, 8vw, 64px)" }}
+          className="font-serif text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl"
+          style={{ color: "#FBF8EF" }}
         >
           Shree Srushti Homestay
         </h1>
